@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        fieldset {
+            text-align: center;
+        }
+
+        #btn {
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #9C1A1C;
+        }
+
+        a:link {
+        color: saddlebrown;
+        }
+
+        a:visited {
+        color: green;
+        }
+
+        a:hover {
+        color: cornflowerblue;
+        }
+
+        a:active {
+        color: mediumblue;
+        }
+
+        * {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #2196F3;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto 500px auto;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  background-color: #cccccc;
+  padding: 10px;
+  justify-self: center;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  border: 2px solid #2196F3;
+  grid-area: 2 / 2 / 2 / 3;
+}
+
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+<title>Giriş Yap</title>
+
+</head>
+<body style="color:black">
+
+<div class="topnav">
+  <a href="/anasayfa" class="active">Ana Sayfa</a>
+
+  <div class="dropdown">
+
+    <button class="dropbtn">Kategoriler
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-content">
+      <a href="/bilgisayar">Bilgisayar</a>
+      <a href="/kitap">Kitap</a>
+      <a href="/akillitelefon">Akıllı Telefon</a>
+    </div>
+  </div>
+
+  <div class="search-container">
+    <form action="/arama" method="post">
+      <input type="text" placeholder="İstediğiniz ürünü arayın!" name="arama">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+
+</div>
+
+<div class="grid-container">
+
+    <div>
+
+        <legend><h2>Giriş Yap</h2></legend>
+
+        <form action="/kontrol" method="post">
+            <legend>Email:</legend>
+
+            <input type="email" id="email" name="email" required>
+
+            <br>
+            <br>
+
+            Şifre:
+
+            <br>
+
+            <input type="password" id="sifre" name="sifre" required>
+
+            <br>
+            <br>
+
+            <input type="submit" value="Giriş Yap" id="btn">
+
+            <br>
+
+            <p>Hesabınız yok mu? <a href="/kayit">Kayıt olun</a></p>
+
+            <br>
+
+            {% if not hata_var %}
+            <p><b>{{ mesaj }}</b></p>
+            {% endif %}
+
+            {% if basarili is false %}
+            <p><b style="color: darkred">Hata: </b>{{ hatamesaji }}</p>
+            {% endif %}
+
+            <br>
+
+            {% if cikis_yapildi %}
+            <p><b>{{ veda }}</b></p>
+            {% endif %}
+
+            {% if hesapguncellendi %}
+            <p><b>{{ bilgi }}</b></p>
+            {% endif %}
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</body>
+</html>
