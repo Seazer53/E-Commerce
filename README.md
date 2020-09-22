@@ -1,2 +1,2 @@
-# E-Ticaret
-Python Flask kütüphanesi kullanılarak oluşturulmuş E-ticaret sitesi projesi. Veritabanı olarak Microsoft SQL Server kullanıldı.
+# E-Commerce
+An e-commerce project created by using Python Flask library Python. As a database Microsoft SQL Database has been used.
